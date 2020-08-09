@@ -1,0 +1,52 @@
+// Sem led infravermelho e fototransistor (não tem led infravermelho no simulador);
+
+const int vermelho = 12;
+const int amarelo = 11;
+const int azul = 10;
+
+int cont = 0;
+
+void setup()
+{
+  pinMode(13, INPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+     
+}
+
+void loop()
+{
+  if(digitalRead(13)==1){
+    cont++;
+   
+  }
+  
+  if(cont==1){
+    digitalWrite(vermelho,HIGH);
+    digitalWrite(amarelo,LOW);
+    digitalWrite(azul,LOW);
+  }
+  
+  if(cont==2){
+    digitalWrite(vermelho,LOW);
+    digitalWrite(amarelo,HIGH);
+    digitalWrite(azul,LOW);
+  }
+  
+  if(cont==3){
+    digitalWrite(vermelho,LOW);
+    digitalWrite(amarelo,LOW);
+    digitalWrite(azul,HIGH);
+  }
+  
+  if(cont==4){
+    digitalWrite(vermelho,LOW);
+    digitalWrite(amarelo,LOW);
+    digitalWrite(azul,LOW);
+    cont = 0;
+  }
+  
+  delay(500);
+    
+}
