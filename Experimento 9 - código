@@ -1,0 +1,29 @@
+int controle;
+
+void setup()
+{
+  pinMode(12,INPUT);
+  pinMode(7,OUTPUT);
+  
+  
+  Serial.begin(9600);
+  
+}
+
+void loop()
+{
+  controle = digitalRead(12);
+  Serial.println(controle);
+  
+  if(controle==0){
+    digitalWrite(7,LOW);
+   
+  }
+  else{
+    digitalWrite(7,HIGH);
+  } 
+    
+ 
+  
+  
+}
