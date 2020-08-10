@@ -1,0 +1,26 @@
+int poten;
+int conversao;
+
+void setup()
+{
+  
+  pinMode(6,OUTPUT);
+  
+}
+
+void loop()
+{
+  // lê o valor analógico que o potenciômetro está mandando
+  poten = analogRead(A0);
+  
+  // aqui ele faz uma proporcão entre os valores analógicos para os valores digitais da porta pwm
+  // analogWrite(pino, map(valor,mínimo,máximo para mínimo,máximo))
+  
+  analogWrite(6, map(poten,0,1023,0,255));
+               
+  // obs: não entendi pq ele usou analogWrite para mandar sinal para uma porta digital.
+ 	   
+ 
+  
+  
+}
